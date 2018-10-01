@@ -76,12 +76,13 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 /* ====================== Navigation ====================== */
 nav {
   width: 100%;
-  height: 80px;
+  height: auto;
   background-color: #252831;
   text-align:center;
 }
 nav h1 {
   margin: auto;
+	padding: 10px;
 }
 nav h1 a {
   color: #fff;
@@ -153,6 +154,7 @@ nav h1 a {
   margin: 10px;
   padding: 0 10px;
   width: 90%;
+	max-width: 300px;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -201,7 +203,7 @@ nav h1 a {
   border-bottom: 3px solid #eee;
   color: #fff;
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 15px auto;
   padding: 8px 30px 10px;
   text-align: center;
@@ -300,4 +302,17 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+@media screen and (min-width: 640px) {
+	#restaurants-list {
+		display: grid;
+		grid-template-columns: auto auto;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	#restaurants-list {
+		grid-template-columns: auto auto auto;
+	}
 }
