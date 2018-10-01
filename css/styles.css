@@ -44,8 +44,9 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   grid-gap: 0;
   grid-template-areas:
     "header"
-    "map-container"
+    "map"
 		"filters"
+		"reviews"
     "footer";
 		width: 100%;
 		padding: 0;
@@ -59,10 +60,12 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 	grid-area: header;
 }
 #map-container {
-	grid-area: map-container;
+	grid-area: map;
 }
 .filters {
 	grid-area: filters;
+	max-width: 1024px;
+	margin: 0 auto;
 }
 .footer {
   background-color: #444;
@@ -92,7 +95,7 @@ nav h1 a {
   text-transform: uppercase;
 }
 #breadcrumb {
-    padding: 10px 40px 16px;
+    padding: 5px;
     list-style: none;
     background-color: #eee;
     font-size: 17px;
@@ -164,6 +167,7 @@ nav h1 a {
   margin: 0 auto;
   padding: 0;
   text-align: center;
+	max-width: 1200px;
 }
 #restaurants-list li {
   background-color: #fff;
@@ -230,16 +234,18 @@ nav h1 a {
   font-size: 20pt;
   font-weight: 200;
   letter-spacing: 0;
-  margin: 15px 0 30px;
+  margin: 15px auto;
   text-transform: uppercase;
   line-height: 1.1;
+	padding-left: 5px;
 }
 #restaurant-img {
-	width: 90%;
+	width: 100%;
 }
 #restaurant-address {
   font-size: 12pt;
-  margin: 10px 0px;
+  margin: 10px 0;
+	padding-left: 5px;
 }
 #restaurant-cuisine {
   background-color: #333;
@@ -251,13 +257,16 @@ nav h1 a {
   padding: 2px 0;
   text-align: center;
   text-transform: uppercase;
-	width: 90%;
+	width: 100%;
 }
 #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
   padding: 50px 10px 30px;
   width: 100%;
+	max-width: 1024px;
+	grid-area: reviews;
+	margin: 0 auto;
 }
 #reviews-container h2 {
   color: #f58500;
@@ -272,7 +281,7 @@ nav h1 a {
 }
 #reviews-list li {
   background-color: #fff;
-    border: 2px solid #f3f3f3;
+  border: 2px solid #f3f3f3;
   display: block;
   list-style-type: none;
   margin: 0 0 30px;
@@ -284,17 +293,29 @@ nav h1 a {
 #reviews-list li p {
   margin: 0 0 10px;
 }
+#restaurant-hours {
+	padding-left: 5px;
+}
 #restaurant-hours td {
   color: #666;
 }
-
 @media screen and (min-width: 640px) {
 	#restaurants-list {
 		display: grid;
 		grid-template-columns: auto auto;
 	}
+	#restaurant-address {
+	  font-size: 1.5rem;
+	  margin: 10px 0;
+		padding-left: 5px;
+	}
+	#restaurant-hours td {
+		font-size: 1.3rem;
+	}
+	#reviews-list li p {
+		font-size: 1.3rem;
+	}
 }
-
 @media screen and (min-width: 1024px) {
 	#restaurants-list {
 		grid-template-columns: auto auto auto;
