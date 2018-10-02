@@ -15,32 +15,34 @@
 
     <header class="header">
       <nav>
-        <h1><a href="/" tabindex="1" aria-label="Home">Restaurant Reviews</a></h1>
+        <h1><a href="/" tabindex="1" aria-labelledby="Restaurant Reviews" title="Home" role="banner">Restaurant Reviews</a></h1>
       </nav>
     </header>
 
     <main class="maincontent">
       <section id="map-container">
-        <div id="map"></div>
+        <div id="map" aria-label="Map"></div>
       </section>
 
       <section class="filters">
         <div class="filter-options">
           <h2>Filter Results</h2>
-          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" tabindex="2" role="tablist">
+
+          <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()" tabindex="2" role="Menu" aria-label="Select neighorhood">
             <option value="all">All Neighborhoods</option>
           </select>
 
-          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" tabindex="3">
+          <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()" tabindex="3" aria-label="Select cuisine" role="Menu">
             <option value="all">All Cuisines</option>
           </select>
+
         </div>
-        <ul id="restaurants-list"></ul>
+        <ul id="restaurants-list" aria-label="Restaurants list"></ul>
       </section>
     </main>
 
     <footer class="footer">
-      Copyright (c) 2017 <a href="/" tabindex="5"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
+      Copyright (c) 2017 <a href="/" tabindex="5" aria-labelledby="Home" title="Home"><strong>Restaurant Reviews</strong></a> All Rights Reserved.
     </footer>
   </div>
 
