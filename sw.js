@@ -17,8 +17,7 @@ const cacheFiles = [
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
-  '/restaurant.html',
-  'https://unpkg.com/leaflet@1.3.1/dist/leaflet.js'
+  '/restaurant.html'
 ];
 
 self.addEventListener('install', event => {

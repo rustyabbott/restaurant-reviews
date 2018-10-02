@@ -64,7 +64,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 .filters {
 	grid-area: filters;
-	max-width: 1024px;
 	margin: 0 auto;
 }
 .footer {
@@ -186,7 +185,7 @@ nav h1 a {
   min-height: 248px;
   min-width: 100%;
 }
-#restaurants-list li h1 {
+#restaurants-list li h2 {
   color: #f18200;
   font-family: Arial,sans-serif;
   font-size: 1.5rem;
