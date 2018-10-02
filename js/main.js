@@ -6,10 +6,12 @@ var markers = []
 
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker
-  .register('js/sw.js')
+  .register('/sw.js')
   .catch(function(err) {
     console.log(err);
   })
+} else {
+  console.log('Service worker not in navigtor');
 }
 
 /**

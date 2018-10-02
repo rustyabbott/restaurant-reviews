@@ -20,9 +20,9 @@ const cacheFiles = [
   '/restaurant.html'
 ];
 
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(cacheName).then(cache => {
+self.addEventListener('install', event => {
+  console.log('Service Worker installing');
+  event.waitUntil(caches.open(cacheName).then(cache => {
       return cache
       .addAll(cacheFiles)
       .catch(error => {
@@ -31,3 +31,21 @@ self.addEventListener('install', e => {
     })
   )
 })
+
+self.addEventListener('activate', event => {
+  console.log('Service Worker activating');
+})
+
+// From https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent
+self.addEventListener('fetch', event => {
+  if (event.request.method != 'GET') return;
+  event.respondWith(async function() {
+    const cache = await caches.open('retaurant-reviews-app');
+    const cachedResponse = await cache.match(event.request);
+    if (cachedResponse) {
+      event.waitUntil(cache.add(event.request));
+      return cachedResponse;
+    }
+    return fetch(event.request);
+  }());
+});
