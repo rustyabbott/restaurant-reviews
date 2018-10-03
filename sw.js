@@ -21,7 +21,6 @@ const cacheFiles = [
 ];
 
 self.addEventListener('install', event => {
-  console.log('Service Worker installing');
   event.waitUntil(caches.open(cacheName).then(cache => {
       return cache
       .addAll(cacheFiles)
@@ -30,10 +29,6 @@ self.addEventListener('install', event => {
       })
     })
   )
-})
-
-self.addEventListener('activate', event => {
-  console.log('Service Worker activating');
 })
 
 // From https://developer.mozilla.org/en-US/docs/Web/API/FetchEvent
