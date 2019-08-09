@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
     const port = 8000 // Change this to your server port
-    return `https://rusty.ninja/restaurant-reviews/data/restaurants.json`;
+    return `https://rustyabbott.com/restaurant-reviews/data/restaurants.json`;
   }
 
   /**
